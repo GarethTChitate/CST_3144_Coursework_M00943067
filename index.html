@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <script type = "module">
+        const {createApp} = Vue
+        const myApp = createApp({
+            data(){
+                return {
+                    message: 'Learn Computer Science Online! Available modules are:',
+                    subject: "1. Full Stack Development",
+                    location: "Mauritius",
+                    Price: "$1000",
+                    image: "images/computers.jpeg"
+                }
+            }
+        })
+        myApp.mount('#app')
+    </script>
+
+
+<div id= 'app'>
+    <h1 v-text = "message"></h1>
+
+    <h2 v-text = "subject"></h2>
+    <img v-bind:src="image" v-bind:alt="subject.alt" width =300>
+    <p>Location: {{ location }} 
+        <br>
+        Price: {{ Price }}
+    </p>
+
+
+</div>
+    
+</body>
+</html>
